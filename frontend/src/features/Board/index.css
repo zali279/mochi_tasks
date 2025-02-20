@@ -1,0 +1,25 @@
+.board-container {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 10px 100px;
+  background-color: var(--dark-brown-color);
+  flex: 1;
+  height: 90vh;
+  margin: 0px 100px;
+}
+
+@media screen and (max-width: 1511px) {
+  .board-container {
+    margin: 0;
+    padding: 0;
+  }
+
+}
+
+@media screen and (max-width: 1000px) {
+  .board-container {
+    height: auto;
+  }
+}
