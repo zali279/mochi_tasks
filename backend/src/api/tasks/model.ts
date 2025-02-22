@@ -1,5 +1,6 @@
 import Sequelize, { DataTypes } from "sequelize";
 import sequelize from "../../config/database";
+import User from "../users/model";
 
 const Task = sequelize.define("Task", {
   id: {
@@ -20,6 +21,15 @@ const Task = sequelize.define("Task", {
   description: {
     type: DataTypes.STRING,
     allowNull: false,
+  },
+  userId: {
+    type: DataTypes.UUID,
+    allowNull: false,
+    references: {
+      model: User, 
+      key: "id",
+    },
+    onDelete: "CASCADE", // If the user is deleted, delete their tasks
   },
 });
 
